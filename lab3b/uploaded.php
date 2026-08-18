@@ -52,3 +52,18 @@ if (!empty($_FILES['audio_file']['name'])) {
         echo 'Failed to upload audio file';
     }
 }
+
+// Handle Image File
+if (!empty($_FILES['image_file']['name'])) {
+    $uploaded_image_file = $upload_directory . basename($_FILES['image_file']['name']);
+    $temporary_image = $_FILES['image_file']['tmp_name'];
+    if (move_uploaded_file($temporary_image, $uploaded_image_file)) {
+        $image_relative = $relative_path . basename($_FILES['image_file']['name']);
+        ?>
+        <h3>Image File</h3>
+        <img src="<?php echo htmlspecialchars($image_relative); ?>" style="max-width: 100%;" alt="Uploaded image" />
+        <?php
+    } else {
+        echo 'Failed to upload image file';
+    }
+}
