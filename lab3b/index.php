@@ -18,8 +18,6 @@
 <div class="row--50-50 grid-demo">
   <div class="col">
     <h4>File Upload</h4>
-    <!-- BUG FIX: form was missing method, action, and enctype.
-         enctype="multipart/form-data" is required for file uploads to work at all. -->
     <form method="POST" action="uploaded.php" enctype="multipart/form-data">
         <div class="p-card">
             <h3>Text File</h3>
@@ -32,6 +30,13 @@
             <h3>PDF File</h3>
             <p class="p-card__content">
             <input type="file" name="pdf_file" accept=".pdf" />
+            </p>
+        </div>
+
+        <div class="p-card">
+            <h3>Audio File</h3>
+            <p class="p-card__content">
+            <input type="file" name="audio_file" accept=".mp3" />
             </p>
         </div>
 
