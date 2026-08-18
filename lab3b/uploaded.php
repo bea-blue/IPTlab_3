@@ -67,3 +67,21 @@ if (!empty($_FILES['image_file']['name'])) {
         echo 'Failed to upload image file';
     }
 }
+
+// Handle Video File
+if (!empty($_FILES['video_file']['name'])) {
+    $uploaded_video_file = $upload_directory . basename($_FILES['video_file']['name']);
+    $temporary_video = $_FILES['video_file']['tmp_name'];
+    if (move_uploaded_file($temporary_video, $uploaded_video_file)) {
+        $video_relative = $relative_path . basename($_FILES['video_file']['name']);
+        ?>
+        <h3>Video File</h3>
+        <video width="480" controls>
+            <source src="<?php echo htmlspecialchars($video_relative); ?>" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <?php
+    } else {
+        echo 'Failed to upload video file';
+    }
+}
