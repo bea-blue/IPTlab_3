@@ -34,7 +34,7 @@ $total_questions = count($all_questions);
 
     <!-- Since all questions load at once, this form is submitted only once,
          straight to results.php -->
-    <form method="POST" action="results.php" id="quiz-form">
+    <form method="POST" action="result.php" id="quiz-form">
         <input type="hidden" name="complete_name" value="<?php echo htmlspecialchars($complete_name); ?>" />
         <input type="hidden" name="email" value="<?php echo htmlspecialchars($email); ?>" />
         <input type="hidden" name="birthdate" value="<?php echo htmlspecialchars($birthdate); ?>" />
