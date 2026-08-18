@@ -58,7 +58,6 @@ function get_option_text($options, $key) {
 <section class="hero <?php echo $hero_class; ?>">
     <div class="hero-body">
         <p class="title">Your Score: <?php echo $score; ?> / <?php echo $max_possible_score; ?></p>
-        <p class="subtitle">This is the IPT10 PHP Quiz Web Application Laboratory Activity.</p>
     </div>
 </section>
 <section class="section">
